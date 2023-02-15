@@ -27,7 +27,7 @@ export default class Team {
         if (this.current < this.last) {
           const player = characters[this.current];
           this.current += 1;
-          return { dine: false, value: player };
+          return { done: false, value: player };
         }
         return { done: true };
       },
