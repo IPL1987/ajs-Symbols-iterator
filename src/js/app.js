@@ -20,13 +20,13 @@ export default class Team {
 
   [Symbol.iterator]() {
     const characters = this.toArray();
+    let current = 0;
+    const last = characters.length;
     return {
-      current: 0,
-      last: characters.length,
       next() {
-        if (this.current < this.last) {
-          const player = characters[this.current];
-          this.current += 1;
+        if (current < last) {
+          const player = characters[current];
+          current += 1;
           return { done: false, value: player };
         }
         return { done: true };
